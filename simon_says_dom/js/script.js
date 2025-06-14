@@ -17,6 +17,10 @@ let numbers = [];
 
 for (let i = 0; i < 5; i++) {
   let numb = Math.ceil(Math.random() * 50);
+
+  //if (!numbers.includes(numb)) {
+  // c'è qualcosa che non va
+  //}
   numbers.push(numb);
   // console.log(numb);
 }
