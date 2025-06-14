@@ -18,10 +18,32 @@ let numbers = [];
 for (let i = 0; i < 5; i++) {
   let numb = Math.ceil(Math.random() * 50);
 
-  //if (!numbers.includes(numb)) {
-  // c'è qualcosa che non va
-  //}
+  //   if (numb != numb) {
+  //
+  //   }
   numbers.push(numb);
-  // console.log(numb);
+  //console.log(numb);
 }
 console.log(numbers);
+
+const numbersList = document.getElementById("numbers-list");
+numbersList.innerHTML = numbers;
+
+//timer
+const countdown = document.getElementById("countdown");
+let seconds = 6;
+const limit = 0;
+
+const timer = setInterval(() => {
+  seconds--;
+  console.log(seconds);
+  console.log(seconds === 0);
+
+  if (seconds <= 0) {
+    //così si vede lo 0 in pagina
+    clearInterval(timer);
+  }
+  countdown.innerText = seconds;
+}, 1000);
+
+// stampare countdown in pagina
