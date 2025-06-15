@@ -28,13 +28,13 @@ console.log(numbers);
 
 const numbersList = document.getElementById("numbers-list");
 numbersList.innerHTML = numbers;
-
+// console.log(numbers);
 //timer
 const countdown = document.getElementById("countdown");
 const answersForm = document.getElementById("answers-form");
-let seconds = 6;
+let seconds = 1; // cambiare !
 const limit = 0;
-
+// console.log(numbers);
 const timer = setInterval(() => {
   seconds--;
   console.log(seconds);
@@ -53,7 +53,28 @@ const timer = setInterval(() => {
   }
 }, 1000);
 
+// seleziona tutti gli imput
+const inputsEl = document.querySelectorAll("input");
+
 // non permette alla pagina di ricaricarsi
 answersForm.addEventListener("submit", (e) => {
   e.preventDefault();
+
+  // risposte
+  const userAnwers = [];
+  const userGuess = [];
+
+  for (let i = 0; i < inputsEl.length; i++) {
+    const inputEl = inputsEl[i];
+    userAnwers.push(Number(inputEl.value));
+    console.log(numbers);
+
+    if (numbers.includes(inputEl)) {
+      userGuess.push(inputEl);
+    }
+
+    console.log(inputsEl);
+  }
+
+  console.log(userGuess);
 });
