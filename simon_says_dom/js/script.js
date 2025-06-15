@@ -55,6 +55,7 @@ const timer = setInterval(() => {
 
 // seleziona tutti gli imput
 const inputsEl = document.querySelectorAll("input");
+const message = document.getElementById("message");
 
 // non permette alla pagina di ricaricarsi
 answersForm.addEventListener("submit", (e) => {
@@ -67,14 +68,10 @@ answersForm.addEventListener("submit", (e) => {
   for (let i = 0; i < inputsEl.length; i++) {
     const inputEl = inputsEl[i];
     userAnwers.push(Number(inputEl.value));
-    console.log(numbers);
 
     if (numbers.includes(inputEl)) {
       userGuess.push(inputEl);
+      message.innerText = userGuess;
     }
-
-    console.log(inputsEl);
   }
-
-  console.log(userGuess);
 });
